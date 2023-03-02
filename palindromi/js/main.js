@@ -1,34 +1,36 @@
-let userWord = prompt('Scrivi una parola per vedere se è palindroma');
+let userWord = prompt('Scrivi una parola per vedere se è palindroma').replace(/ /g,'');
 
+console.log(userWord);
 
 console.log(palindromeCheck(userWord));
 
-//parola
-//012345
-//123456
+
 
 function palindromeCheck(parola){
     let i = 0;
-    let x;
+    let palindrome = false;
+    let c = parola.length - 1;
 
-    while( i <= parola.length - 1){ //0
+    while( i <= parola.length ){ 
         
-        let c = parola.length - 1;
+        if(i > c){
+        palindrome = true;
+        i = parola.length + 1;
 
-        if(i < parola.length && parola[i] == parola[c]){ //0
+        }else if(i < parola.length - 1 && parola[i] == parola[c]){ 
             i++;
             c--;
-            console.log(i);
-        }else if( i == parola.length - 1){
-           x = 'è palindromo';
-            console.log(`${parola}'è palindromo'`);
-            i++;
-        }else{
-            x = 'non è palindromo';
-            console.log(`${parola}'non è palindromo'`);
-            i = parola.length;
-        }
 
+        }else{
+        i = parola.length + 1;
+        }
     }
-    return x;
+
+    if (palindrome == true){
+        palindrome = 'La parola è palindroma';
+    }else{
+        palindrome = 'La parola non è palindroma';
+    }
+
+    return palindrome;
 }
