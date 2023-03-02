@@ -1,18 +1,34 @@
 let userWord = prompt('Scrivi una parola per vedere se è palindroma');
 
-palindromeCheck(userWord)
 
+console.log(palindromeCheck(userWord));
 
+//parola
+//012345
+//123456
 
 function palindromeCheck(parola){
-    let c = parola.length - 1;
     let i = 0;
-    while( i <= parola.length - 1){
-        if(parola[i] == parola[c]){
+    let x;
+
+    while( i <= parola.length - 1){ //0
+        
+        let c = parola.length - 1;
+
+        if(i < parola.length && parola[i] == parola[c]){ //0
             i++;
             c--;
-        }else if( i == parola.length){
-            
+            console.log(i);
+        }else if( i == parola.length - 1){
+           x = 'è palindromo';
+            console.log(`${parola}'è palindromo'`);
+            i++;
+        }else{
+            x = 'non è palindromo';
+            console.log(`${parola}'non è palindromo'`);
+            i = parola.length;
         }
+
     }
+    return x;
 }
