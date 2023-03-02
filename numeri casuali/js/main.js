@@ -10,7 +10,7 @@ let i = 0;
 while ( i < 1 ){
     betChoice = prompt('Scrive se puntare su Pari o Dispari');
     
-    if(betChoice == 'pari' || 'dispari' || 'Pari' || 'Dispari' || 'PARI' ||'DISPARI'){
+    if(betChoice == 'pari' ||betChoice == 'dispari' ||betChoice == 'Pari' ||betChoice == 'Dispari' ||betChoice == 'PARI' ||betChoice == 'DISPARI'){
         i++;
     }
 };
@@ -24,7 +24,7 @@ let c = 0;
 while (c < 1){
     userNumber = parseInt(prompt('Scrivi un numero da 1 a 5'));
 
-    if(userNumber == 1 || 2 || 3 || 4 || 5){
+    if(userNumber == 1 ||userNumber == 2 ||userNumber == 3 ||userNumber == 4 ||userNumber == 5){
         c++
     }
 };
@@ -64,3 +64,4 @@ function oddEven (numero){
 
     return oddEvenResoult;
 };
+
