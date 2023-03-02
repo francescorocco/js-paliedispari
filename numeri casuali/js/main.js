@@ -4,10 +4,31 @@
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
 
-let betChoice = prompt('Scrive se puntare su pari o dispari');
+let betChoice;
+
+let i = 0;
+while ( i < 1 ){
+    betChoice = prompt('Scrive se puntare su Pari o Dispari');
+    
+    if(betChoice == 'pari' || 'dispari' || 'Pari' || 'Dispari' || 'PARI' ||'DISPARI'){
+        i++;
+    }
+};
+
+
 console.log(betChoice);
 
-let userNumber = parseInt(prompt('Scrivi un numero da 1 a 5'));
+let userNumber;
+
+let c = 0;
+while (c < 1){
+    userNumber = parseInt(prompt('Scrivi un numero da 1 a 5'));
+
+    if(userNumber == 1 || 2 || 3 || 4 || 5){
+        c++
+    }
+};
+
 console.log(userNumber);
 
 let pcNumber = randomNumber();
@@ -17,19 +38,19 @@ console.log(pcNumber);
 let sumNumber = userNumber + pcNumber;
 
 
-if (betChoice == 'pari' && oddEven(sumNumber) == 'Pari'){
+if (betChoice == 'pari' || 'Pari' || 'PARI'  && oddEven(sumNumber) == 'Pari'){
     console.log('Hai vinto');
-}else if(betChoice == 'dispari' && oddEven(sumNumber) == 'Dispari'){
+}else if(betChoice == 'dispari' || 'Dispari' ||'DISPARI' && oddEven(sumNumber) == 'Dispari'){
     console.log('Hai vinto');
 }else{
-    console.log('Hai perso')
-}
+    console.log('Hai perso');
+};
 
 
 function randomNumber(){
     let pickNumber = Math.floor((Math.random() * 5) + 1);
     return pickNumber;
-}
+};
 
 function oddEven (numero){
 
@@ -42,4 +63,4 @@ function oddEven (numero){
     }
 
     return oddEvenResoult;
-}
+};
